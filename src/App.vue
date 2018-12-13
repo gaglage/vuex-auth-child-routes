@@ -1,7 +1,8 @@
 <template>
-  <div id="app">
+  <div id='app'>
+    <loading :active.sync='loading'></loading>
     <b-container>
-      <navigation-guest v-if="!isLogged"></navigation-guest>
+      <navigation-guest v-if='!isLogged'></navigation-guest>
       <navigation-logged v-else></navigation-logged>
       <router-view/>
     </b-container>
@@ -12,13 +13,18 @@
 import NavigationLogged from "@/components/Navigations/Logged";
 import NavigationGuest from "@/components/Navigations/Guest";
 import { mapState } from "vuex";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+
 export default {
   components: {
     NavigationLogged,
-    NavigationGuest
+    NavigationGuest,
+    Loading
   },
   computed: {
-    ...mapState("auth", ["isLogged"])
+    ...mapState("auth", ["isLogged"]),
+    ...mapState(["loading"])
   }
 };
 </script>
