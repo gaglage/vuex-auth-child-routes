@@ -27,3 +27,7 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Notes
+use vue ui to start de proyect
+json-server --watch db.json --middlewares login.js

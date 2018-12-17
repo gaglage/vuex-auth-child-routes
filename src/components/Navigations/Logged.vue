@@ -9,10 +9,7 @@
         exact
         to="/secret/notes"
       >Notas secreta</b-nav-item>
-      <b-nav-item
-        exact
-        to="/secret/notes"
-      >Página secreta</b-nav-item>
+
       <b-nav-item @click="_logout">Cerrar sesión</b-nav-item>
     </b-nav>
   </div>
